@@ -1,12 +1,13 @@
-import React, { useEffect } from "react";
-import "./App.css";
+import React from "react";
 import UnreadChatItem from "./Components/UnreadChatItem";
 import ReadChatItem from "./Components/ReadChatItem";
-import { ChatData } from "./Constant/ChatData";
+import useChatApi from "./Hooks/useChatApi";
+
+import "./App.css";
 
 function App() {
   const [getTappedTitle, setTappedTitle] = React.useState<any>("");
-  const chatArr: any = ChatData?.data?.chats?.chats;
+  const [chats, setChats] = React.useState<any>([]);
 
   /**
    * @name compareByTime
@@ -31,6 +32,14 @@ function App() {
     setTappedTitle(title);
   };
 
+  /**
+   * @name useChatApi
+   * @description custom hook to set chats in state
+   * @param setChats
+   */
+
+  useChatApi({ setChats });
+
   return (
     <div className="container">
       <div className="chatContainerLeft">
@@ -39,7 +48,7 @@ function App() {
         </div>
         <div className="chatBodyMain">
           <UnreadChatItem />
-          {chatArr?.sort(compareByTime)?.map((item: any, index: any) => {
+          {chats?.sort(compareByTime)?.map((item: any, index: any) => {
             return <ReadChatItem item={item} key={index} sendTitle={sendTitle} />;
           })}
         </div>
