@@ -1,0 +1,101 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+.fw-500 {
+  font-weight: 500;
+}
+
+.ChatItemBoxContainer {
+  height: 100px;
+  border-radius: 8px;
+  padding: 10px 10px;
+  overflow: hidden;
+}
+
+.ChatItemBody {
+  display: flex;
+  margin-top: 10px;
+}
+
+.IndicatorUnreadChatItem {
+  height: 50px;
+  width: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.IndicatorUnreadChatItem img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.UnReaditemImage {
+  height: 50px;
+  width: 60px;
+}
+
+.UnReaditemImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  border-radius: 50%;
+}
+
+.MessageHeaderContainer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1vw;
+}
+
+.MessageBody {
+  width: 100%;
+  margin-left: 10px;
+  font-size: 1vw;
+}
+
+.single-line {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/*-------------- Media Queries --------------- */
+
+@media (max-width: 1027px) {
+  .MessageBody {
+    font-size: 7px; 
+  }
+
+  .MessageHeaderContainer {
+    display: block
+  }
+
+  .ChatItemBoxContainer {
+    height: 120px;
+    border-radius: 8px;
+    padding: 10px 10px;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 768px) {
+  .MessageBody {
+    font-size: 10px; 
+  }
+}
+
+@media (max-width: 480px) {
+  .MessageBody {
+    font-size: 10px; 
+  }
+}
