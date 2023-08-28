@@ -38,10 +38,10 @@ function App() {
           <h6>Messaging</h6>
         </div>
         <div className="chatBodyMain">
-        <UnreadChatItem />
-        {chatArr?.sort(compareByTime)?.map((item: any, index: any) => {
-          return <ReadChatItem item={item} key={index} sendTitle={sendTitle} />;
-        })}
+          <UnreadChatItem />
+          {chatArr?.sort(compareByTime)?.map((item: any, index: any) => {
+            return <ReadChatItem item={item} key={index} sendTitle={sendTitle} />;
+          })}
         </div>
       </div>
 
